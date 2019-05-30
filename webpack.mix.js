@@ -1,15 +1,14 @@
 const mix = require('laravel-mix');
 const path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const Fiber = require('fibers');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 mix.webpackConfig({
 		devtool: "inline-source-map",
-		entry: './resources/js/app.js',
+		entry: './resources/js/index.tsx',
 		resolve: {
-			extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
+			extensions: ['.*','.js', '.jsx', '.ts', '.tsx'],
 		},
 		output: {
 			filename: 'app.js',
@@ -21,13 +20,9 @@ mix.webpackConfig({
 				loader: "babel-loader",
 				exclude: /node_modules/
 			}, {
-				test: /\.tsx?$/,
-				loader: "ts-loader",
-				exclude: /node_modules/,
-			}, {
-				enforce: "pre",
-				test: /\.js$/,
-				loader: "source-map-loader"
+				test: /\.(ts|tsx)?$/,
+				use:[{loader: 'ts-loader'}],
+				exclude: /node_modules|\.d\.ts$/
 			}, {
 				test: /\.scss$/,
 				use: [{
@@ -50,5 +45,5 @@ mix.webpackConfig({
 			}),
 			new CleanWebpackPlugin(),
 		]
-	}).react('resources/js/app.js', 'public/js')
+	}).react('resources/js/index.tsx', 'public/js')
 	.sass('resources/sass/app.scss', 'public/css');

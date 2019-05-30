@@ -1,12 +1,10 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-export default class App extends React.Component<{}, {}> {
+interface OwnProps{}
+
+export default class App extends React.Component<OwnProps , {}> {
 	render() {
 		return <div>Hello from Tsx</div>;
 	}
-}
-
-if (document.getElementById('react-app')) {
-	ReactDOM.render(<App />, document.getElementById('react-app'));
 }

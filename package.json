@@ -24,8 +24,8 @@
         "mini-css-extract-plugin": "^0.7.0",
         "node-sass": "^4.12.0",
         "popper.js": "^1.12",
-        "react": "^16.2.0",
-        "react-dom": "^16.2.0",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
@@ -35,9 +35,16 @@
         "typescript": "^3.4.5"
     },
     "dependencies": {
-        "@types/react": "^16.8.18",
+        "@types/react": "^16.8.19",
         "@types/react-dom": "^16.8.4",
+        "@types/react-redux": "^7.0.9",
+        "@types/redux": "^3.6.0",
         "fibers": "^4.0.1",
-        "react-hot-loader": "^4.8.8"
+        "react-hot-loader": "^4.8.8",
+        "react-redux": "^7.0.3",
+        "redux": "^4.0.1",
+        "redux-promise-middleware": "^6.1.0",
+        "redux-promise-middleware-actions": "^2.1.0",
+        "redux-thunk": "^2.3.0"
     }
 }
