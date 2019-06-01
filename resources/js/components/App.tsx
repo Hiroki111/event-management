@@ -1,10 +1,17 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import Navigation from "./Navigation";
+import Contents from "./Contents";
 
-interface OwnProps{}
+interface OwnProps { }
 
-export default class App extends React.Component<OwnProps , {}> {
+export default class App extends React.Component<OwnProps, {}> {
 	render() {
-		return <div>Hello from Tsx</div>;
+		return (
+			<div>
+				<Navigation />
+				<Contents />
+			</div>
+		);
 	}
 }
