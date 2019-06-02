@@ -8,7 +8,8 @@ import BusinessIcon from '@material-ui/icons/Business';
 import MicIcon from '@material-ui/icons/Mic';
 import PeopleIcon from '@material-ui/icons/People';
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
-import LogOffIcon from '@material-ui/icons/PowerSettingsNew';
+import LogOutIcon from '@material-ui/icons/PowerSettingsNew';
+import axios from 'axios';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -23,6 +24,14 @@ const Navigation = () => {
     const [value, setValue] = React.useState(0);
     const handleChange = (event: React.ChangeEvent<{}>, newValue: any) => {
         setValue(newValue);
+    }
+    const onClickLogOut = () => {
+        axios({
+            method: 'post',
+            url: '/logout'
+        }).then((result) => {
+            location.reload();
+        });
     }
 
     return (
@@ -41,7 +50,7 @@ const Navigation = () => {
                     <Tab label="EQUIPMENT" icon={<MicIcon />} />
                     <Tab label="MEMBERS" icon={<PeopleIcon />} />
                     <Tab label="ROLES" icon={<PeopleOutlineIcon />} />
-                    <Tab label="LOG OFF" icon={<LogOffIcon />} />
+                    <Tab label="LOG OUT" onClick={onClickLogOut} icon={<LogOutIcon />} />
                 </Tabs>
             </AppBar>
         </div>
