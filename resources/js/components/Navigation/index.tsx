@@ -9,19 +9,6 @@ import MicIcon from '@material-ui/icons/Mic';
 import PeopleIcon from '@material-ui/icons/People';
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
 import LogOffIcon from '@material-ui/icons/PowerSettingsNew';
-import Typography from '@material-ui/core/Typography';
-
-interface TabContainerI {
-    children: any,
-};
-
-const TabContainer = (props: TabContainerI) => {
-    return (
-        <Typography component="div" style={{ padding: 8 * 3 }}>
-            {props.children}
-        </Typography>
-    );
-}
 
 const useStyles = makeStyles(theme => ({
     root: {
