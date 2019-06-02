@@ -19,6 +19,8 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
+
+
 const Navigation = () => {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
@@ -36,14 +38,10 @@ const Navigation = () => {
 
     return (
         <div className={classes.root}>
-            <AppBar position="static" color="default">
+            <AppBar position="static">
                 <Tabs
                     value={value}
                     onChange={handleChange}
-                    variant="scrollable"
-                    scrollButtons="on"
-                    indicatorColor="primary"
-                    textColor="primary"
                 >
                     <Tab label="EVENT" icon={<EventIcon />} />
                     <Tab label="ORGANIZERS" icon={<BusinessIcon />} />

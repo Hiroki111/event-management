@@ -9,7 +9,7 @@
     <title>{{ config('app.name', env('APP_NAME')) }}</title>
 </head>
 
-<body>
+<body style="margin:0;">
     <div id="app">
         @yield('content')
     </div>
