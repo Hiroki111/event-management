@@ -13,4 +13,6 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/{route?}', 'HomeController@index')
+    ->name('home')
+    ->where('route','events|organizers|equipment|members|roles');
