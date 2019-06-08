@@ -10,8 +10,8 @@ import PeopleIcon from '@material-ui/icons/People';
 import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
 import LogOutIcon from '@material-ui/icons/PowerSettingsNew';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import useReactRouter from 'use-react-router';
+import { callLogoutApi } from 'js/utiles';
 
 interface UrlToIndexI {
     "/events": number;
@@ -41,15 +41,6 @@ const useStyles = makeStyles(theme => ({
 const Navigation = () => {
     const classes = useStyles();
 
-    const onClickLogOut = () => {
-        axios({
-            method: 'post',
-            url: '/logout'
-        }).then((result) => {
-            location.reload();
-        });
-    }
-
     const useTabIndex = (): number => {
         const { location } = useReactRouter();
 
@@ -57,6 +48,8 @@ const Navigation = () => {
 
         return mapUrlToIndex[location.pathname];
     }
+
+    const onClickLogOut = () => callLogoutApi();
 
     return (
         <div className={classes.root} >

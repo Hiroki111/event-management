@@ -9,6 +9,9 @@ mix.webpackConfig({
 	entry: './resources/js/index.tsx',
 	resolve: {
 		extensions: ['.*', '.js', '.jsx', '.ts', '.tsx'],
+		alias: {
+			'js': path.resolve(__dirname, 'resources/js'),
+		}
 	},
 	output: {
 		filename: 'app.js',
