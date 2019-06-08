@@ -12,7 +12,6 @@ import LogOutIcon from '@material-ui/icons/PowerSettingsNew';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import useReactRouter from 'use-react-router';
-import { __RouterContext } from 'react-router';
 
 interface UrlToIndexI {
     "/events": number;
