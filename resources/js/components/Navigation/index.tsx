@@ -40,10 +40,9 @@ const useStyles = makeStyles(theme => ({
 
 const Navigation = () => {
     const classes = useStyles();
+    const { location } = useReactRouter();
 
     const useTabIndex = (): number => {
-        const { location } = useReactRouter();
-
         if (!mapUrlToIndex[location.pathname]) return 0;
 
         return mapUrlToIndex[location.pathname];
