@@ -29,9 +29,9 @@ mix.webpackConfig({
 		}, {
 			test: /\.scss$/,
 			use: [{
-				loader: "style-loader"
+				loader: MiniCssExtractPlugin.loader,
 			}, {
-				loader: "css-loader"
+				loader: "css-loader",
 			}, {
 				loader: "sass-loader",
 				options: {
