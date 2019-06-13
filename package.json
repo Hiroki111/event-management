@@ -66,6 +66,7 @@
         "redux-promise-middleware": "^6.1.0",
         "redux-promise-middleware-actions": "^2.1.0",
         "redux-thunk": "^2.3.0",
+        "reselect": "^4.0.0",
         "use-force-update": "^1.0.5",
         "use-react-router": "^1.0.7"
     }
