@@ -1,7 +1,7 @@
 import * as React from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import Navigation from "./Navigation";
-import Events from "./Events";
+import { Events } from "./Events";
 import Organizers from "./Organizers";
 import Equipment from "./Equipment";
 import Members from "./Members";

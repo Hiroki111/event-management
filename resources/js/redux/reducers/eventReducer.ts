@@ -1,26 +1,36 @@
-import actions from "js/redux/actions";
+import * as types from "js/redux/models/event/types";
 
 interface Action {
-    type: string, 
+    type: string,
     payload: { results: any }
 };
 
-const { eventActions } = actions;
+export interface EventStateI {
+    events: any[],
+    error: boolean,
+    fetching: boolean
+}
+
 const defaults = {
     events: [] as any,
     error: false,
     fetching: false,
 };
 
-export default function (state = defaults, action: Action) {
-    if (action.type === eventActions.get.pending)
-        return { ...state, fetching: true, error: false };
+export default function (state: EventStateI = defaults, action: Action) {
+    switch (action.type) {
+        case `${types.FETCH_EVENTS}`: {
+            return { ...state, fetching: true, error: false };
+        }
 
-    if (action.type === eventActions.get.fulfilled)
-        return { ...state, fetching: false, error: false, data: action.payload.results };
+        case `${types.FETCH_EVENTS_FULFILLED}`: {
+            return { ...state, fetching: false, error: false, events: action.payload.results };
+        }
 
-    if (action.type === eventActions.get.rejected)
-        return { ...state, fetching: false, error: true };
+        case `${types.FETCH_EVENTS_REJECTED}`: {
+            return { ...state, fetching: false, error: true };
+        }
+    }
 
     return state;
 }

@@ -2,8 +2,6 @@
 
 import { createCrudAction } from "./base";
 
-export default {
-    eventActions: {
-        ...createCrudAction("event"),
-    }
+export const eventActions = {
+    ...createCrudAction("event"),
 };
