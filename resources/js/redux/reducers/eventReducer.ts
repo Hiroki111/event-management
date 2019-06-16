@@ -1,9 +1,5 @@
 import * as types from "js/redux/models/event/types";
-
-interface Action {
-    type: string,
-    payload: any
-};
+import { AnyAction } from 'redux';
 
 export interface IEventState {
     events: any[],
@@ -17,7 +13,7 @@ const defaults = {
     fetching: false,
 };
 
-export default function (state: IEventState = defaults, action: Action) {
+export default function (state: IEventState = defaults, action: AnyAction) {
     switch (action.type) {
         case `${types.FETCH_EVENTS}`: {
             return { ...state, fetching: true, error: false };
