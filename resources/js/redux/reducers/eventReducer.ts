@@ -5,7 +5,7 @@ interface Action {
     payload: any
 };
 
-export interface EventStateI {
+export interface IEventState {
     events: any[],
     error: boolean,
     fetching: boolean
@@ -17,7 +17,7 @@ const defaults = {
     fetching: false,
 };
 
-export default function (state: EventStateI = defaults, action: Action) {
+export default function (state: IEventState = defaults, action: Action) {
     switch (action.type) {
         case `${types.FETCH_EVENTS}`: {
             return { ...state, fetching: true, error: false };

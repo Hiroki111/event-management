@@ -13,7 +13,7 @@ import useReactRouter from 'use-react-router';
 import { callLogoutApi } from 'js/utiles';
 import './styles.scss';
 
-interface UrlToIndexI {
+interface IUrlToIndex {
     "/events": number;
     "/organizers": number;
     "/equipment": number;
@@ -22,7 +22,7 @@ interface UrlToIndexI {
     [key: string]: number;
 };
 
-const mapUrlToIndex: UrlToIndexI = {
+const mapUrlToIndex: IUrlToIndex = {
     "/events": 0,
     "/organizers": 1,
     "/equipment": 2,

@@ -4,19 +4,19 @@ import { createStructuredSelector } from 'reselect';
 import * as operations from '../../redux/models/event/operations';
 import { getEvents, getIsLoadingEvents } from '../../redux/models/event/selectors';
 
-interface ReduxPropsI {
+interface IReduxProps {
     events: any[];
     isLoadingEvents: boolean;
 }
 
-interface DispatchI {
+interface IDispatch {
     fetchEvents: () => void;
 }
 
-export interface WithReduxPropsI extends ReduxPropsI, DispatchI { };
+export interface IWithReduxProps extends IReduxProps, IDispatch { };
 
-const WithRedux = (Component: React.ComponentType<WithReduxPropsI>) => {
-    class Events extends React.Component<WithReduxPropsI> {
+const WithRedux = (Component: React.ComponentType<IWithReduxProps>) => {
+    class Events extends React.Component<IWithReduxProps> {
         render() {
             return <Component {...this.props} />;
         }
@@ -26,7 +26,7 @@ const WithRedux = (Component: React.ComponentType<WithReduxPropsI>) => {
         }
     };
 
-    const mapDispatchToProps = (dispatch: (action: any) => void): DispatchI => ({
+    const mapDispatchToProps = (dispatch: (action: any) => void): IDispatch => ({
         fetchEvents: () => dispatch(operations.fetchEvents()),
     })
 
@@ -35,7 +35,7 @@ const WithRedux = (Component: React.ComponentType<WithReduxPropsI>) => {
         isLoadingEvents: getIsLoadingEvents,
     });
 
-    return connect<ReduxPropsI, DispatchI>(
+    return connect<IReduxProps, IDispatch>(
         mapStateToProps, mapDispatchToProps
     )(Events);
 }

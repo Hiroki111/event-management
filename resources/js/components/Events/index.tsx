@@ -1,10 +1,10 @@
 import * as React from "react";
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
-import withRedux, { WithReduxPropsI } from 'js/components/Events/withRedux';
+import withRedux, { IWithReduxProps } from 'js/components/Events/withRedux';
 import './styles.scss';
 
-const Events = ({ events, isLoadingEvents }: WithReduxPropsI) => {
+const Events = ({ events, isLoadingEvents }: IWithReduxProps) => {
     const renderCalender = () => {
         if (isLoadingEvents) {
             return <span>Loading...</span>;

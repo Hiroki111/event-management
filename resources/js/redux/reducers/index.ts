@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import eventReducer, { EventStateI } from './eventReducer';
+import eventReducer, { IEventState } from './eventReducer';
 
-export interface StateI {
-    event: EventStateI
+export interface IState {
+    event: IEventState
 }
 
-export default combineReducers<StateI>({
+export default combineReducers<IState>({
     event: eventReducer
 });
