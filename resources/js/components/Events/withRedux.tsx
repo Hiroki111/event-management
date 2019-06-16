@@ -22,10 +22,6 @@ const WithRedux = (Component: React.ComponentType<WithReduxPropsI>) => {
         }
 
         componentDidMount() {
-            this.fetchEvents();
-        }
-
-        fetchEvents() {
             this.props.fetchEvents();
         }
     };

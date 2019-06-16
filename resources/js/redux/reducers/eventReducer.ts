@@ -2,7 +2,7 @@ import * as types from "js/redux/models/event/types";
 
 interface Action {
     type: string,
-    payload: { results: any }
+    payload: any
 };
 
 export interface EventStateI {
@@ -24,7 +24,7 @@ export default function (state: EventStateI = defaults, action: Action) {
         }
 
         case `${types.FETCH_EVENTS_FULFILLED}`: {
-            return { ...state, fetching: false, error: false, events: action.payload.results };
+            return { ...state, fetching: false, error: false, events: action.payload };
         }
 
         case `${types.FETCH_EVENTS_REJECTED}`: {

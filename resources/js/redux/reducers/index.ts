@@ -5,6 +5,6 @@ export interface StateI {
     event: EventStateI
 }
 
-export default combineReducers({
+export default combineReducers<StateI>({
     event: eventReducer
 });
