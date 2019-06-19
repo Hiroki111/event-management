@@ -13,7 +13,8 @@ const Events = ({ events, isLoadingEvents }: IWithReduxProps) => {
         return <FullCalendar
             defaultView="dayGridMonth"
             plugins={[dayGridPlugin]}
-            events={events} />;
+            events={events}
+        />;
     }
 
     return (
