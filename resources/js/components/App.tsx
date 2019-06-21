@@ -6,10 +6,9 @@ import Organizers from "./Organizers";
 import Equipment from "./Equipment";
 import Members from "./Members";
 import Roles from "./Roles";
+import './styles.scss';
 
-interface OwnProps { }
-
-export default class App extends React.Component<OwnProps, {}> {
+export default class App extends React.Component<{}, {}> {
 	render() {
 		return (
 			<React.Fragment>
