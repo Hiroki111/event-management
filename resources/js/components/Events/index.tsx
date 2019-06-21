@@ -2,9 +2,10 @@ import * as React from "react";
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import withRedux, { IWithReduxProps } from 'js/components/Events/withRedux';
+import EventList from 'js/components/Events/EventList';
 import './styles.scss';
 
-const Events = ({ events, isLoadingEvents }: IWithReduxProps) => {
+const Events = ({ eventsForCalendar, isLoadingEvents }: IWithReduxProps) => {
     const renderCalender = () => {
         if (isLoadingEvents) {
             return <span>Loading...</span>;
@@ -13,7 +14,7 @@ const Events = ({ events, isLoadingEvents }: IWithReduxProps) => {
         return <FullCalendar
             defaultView="dayGridMonth"
             plugins={[dayGridPlugin]}
-            events={events}
+            events={eventsForCalendar}
         />;
     }
 
@@ -22,7 +23,11 @@ const Events = ({ events, isLoadingEvents }: IWithReduxProps) => {
             <div id="calendar-wrapper">
                 {renderCalender()}
             </div>
-            <div id="event-menu-wrapper"></div>
+            <div id="event-menu-wrapper">
+                <EventList events={eventsForCalendar.filter(event => {
+                    return (new Date()).getMonth() === (new Date(event.date)).getMonth();
+                })} />
+            </div>
         </div>
     );
 }

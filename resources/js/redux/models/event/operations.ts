@@ -2,7 +2,7 @@ import { Dispatch, AnyAction } from 'redux';
 import * as actions from 'js/redux/models/event/actions';
 import axios from 'axios';
 
-export const fetchEvents = () => {
+export const fetchEventsForCalendar = () => {
     return async (dispatch: Dispatch<AnyAction>) => {
         dispatch(actions.fetchEvents());
         try {

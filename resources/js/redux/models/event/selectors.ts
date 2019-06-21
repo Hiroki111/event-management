@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect'
 import { IState } from 'js/redux/reducers';
 
-const eventsSelector = (state: IState) => state.event
+const eventsSelector = (state: IState) => state.event;
 
 export const getEvents = createSelector(
     eventsSelector,

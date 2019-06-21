@@ -5,12 +5,12 @@ import * as operations from '../../redux/models/event/operations';
 import { getEvents, getIsLoadingEvents } from '../../redux/models/event/selectors';
 
 interface IReduxProps {
-    events: any[];
+    eventsForCalendar: any[];
     isLoadingEvents: boolean;
 }
 
 interface IDispatch {
-    fetchEvents: () => void;
+    fetchEventsForCalendar: () => void;
 }
 
 export interface IWithReduxProps extends IReduxProps, IDispatch { };
@@ -22,21 +22,22 @@ const WithRedux = (Component: React.ComponentType<IWithReduxProps>) => {
         }
 
         componentDidMount() {
-            this.props.fetchEvents();
+            this.props.fetchEventsForCalendar();
         }
     };
 
     const mapDispatchToProps = (dispatch: (action: any) => void): IDispatch => ({
-        fetchEvents: () => dispatch(operations.fetchEvents()),
+        fetchEventsForCalendar: () => dispatch(operations.fetchEventsForCalendar()),
     })
 
     const mapStateToProps = createStructuredSelector({
-        events: getEvents,
+        eventsForCalendar: getEvents,
         isLoadingEvents: getIsLoadingEvents,
     });
 
     return connect<IReduxProps, IDispatch>(
-        mapStateToProps, mapDispatchToProps
+        mapStateToProps,
+        mapDispatchToProps
     )(Events);
 }
 
