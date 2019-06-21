@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class Organizer extends Model
 {
     protected $guarded = [];
 
-    public function organizer()
+    public function events()
     {
-        return $this->belongsTo('App\Organizer');
+        return $this->hasMany('App\Event');
     }
 }

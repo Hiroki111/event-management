@@ -15,6 +15,7 @@ $factory->define(Event::class, function (Faker $faker) {
     $endTime = (string) $endHour . ':' . ["00", "30"][rand(0, 1)];
 
     return [
+        'organizer_id' => rand(1, 10),
         'title' => $faker->firstName . " Ceremony",
         'date' => Carbon::now()->$addDayOrSubDay($days)->format('Y-m-d'),
         'start_time' => $startTime,

@@ -26,7 +26,7 @@ const Events = ({ eventsForCalendar, isLoadingEvents }: IWithReduxProps) => {
             <div id="event-menu-wrapper">
                 <EventList events={eventsForCalendar.filter(event => {
                     return (new Date()).getMonth() === (new Date(event.date)).getMonth();
-                })} />
+                }).sort((a, b) => a.date.localeCompare(b.date))} />
             </div>
         </div>
     );
