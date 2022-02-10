@@ -58,7 +58,7 @@
         "file-loader": "^4.0.0",
         "fullcalendar-reactwrapper": "^1.0.7",
         "moment": "^2.24.0",
-        "node-sass": "^4.12.0",
+        "node-sass": "^7.0.0",
         "path": "^0.12.7",
         "postcss-cli": "^6.1.2",
         "postcss-loader": "^3.0.0",
